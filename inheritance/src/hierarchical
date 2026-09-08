@@ -1,0 +1,29 @@
+class Food {
+    void Food() {
+        System.out.println("This is food");
+    }
+}
+
+class Pizza extends Food {
+    void Pizza() {
+        System.out.println("This is pizza");
+    }
+}
+
+class Burger extends Food {
+    void Burger() {
+        System.out.println("This is burger");
+    }
+}
+
+public class FoodDemo {
+    public static void main(String[] args) {
+        Pizza p = new Pizza();
+        p.Food();
+        p.Pizza();
+
+        Burger b = new Burger();
+        b.Food();
+        b.Burger();
+    }
+}
