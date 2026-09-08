@@ -1,0 +1,120 @@
+class TicketBooking {
+
+    private String stageEvent;
+    private String customer;
+    private Integer noOfSeats;
+
+    public TicketBooking() {
+    }
+
+    public TicketBooking(String stageEvent, String customer, Integer noOfSeats) {
+        this.stageEvent = stageEvent;
+        this.customer = customer;
+        this.noOfSeats = noOfSeats;
+    }
+
+    public String getStageEvent() {
+        return stageEvent;
+    }
+
+    public void setStageEvent(String stageEvent) {
+        this.stageEvent = stageEvent;
+    }
+
+    public String getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(String customer) {
+        this.customer = customer;
+    }
+
+    public Integer getNoOfSeats() {
+        return noOfSeats;
+    }
+
+    public void setNoOfSeats(Integer noOfSeats) {
+        this.noOfSeats = noOfSeats;
+    }
+
+    // Cash payment
+    public void makePayment(Double amount) {
+        System.out.println("Stage event:" + stageEvent);
+        System.out.println("Customer:" + customer);
+        System.out.println("Number of seats:" + noOfSeats);
+        System.out.println("Amount " + String.format("%.1f", amount)
+                + " paid in cash");
+    }
+
+    // Wallet payment
+    public void makePayment(String walletNumber, Double amount) {
+        System.out.println("Stage event:" + stageEvent);
+        System.out.println("Customer:" + customer);
+        System.out.println("Number of seats:" + noOfSeats);
+        System.out.println("Amount " + String.format("%.1f", amount)
+                + " paid using wallet number " + walletNumber);
+    }
+
+    // Credit card payment
+    public void makePayment(String creditCard, String ccv,
+                             String name, Double amount) {
+        System.out.println("Stage event:" + stageEvent);
+        System.out.println("Customer:" + customer);
+        System.out.println("Number of seats:" + noOfSeats);
+        System.out.println("Holder name:" + name);
+        System.out.println("Amount " + String.format("%.1f", amount)
+                + " paid using " + creditCard + " card");
+        System.out.println("CCV:" + ccv);
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // First line
+        String line = sc.nextLine();
+
+        String[] arr = line.split(",");
+
+        TicketBooking tb = new TicketBooking(
+                arr[0].trim(),
+                arr[1].trim(),
+                Integer.parseInt(arr[2].trim())
+        );
+
+        // Choice
+        int choice = Integer.parseInt(sc.nextLine().trim());
+
+        if (choice == 1) {
+
+            double amount = Double.parseDouble(sc.nextLine().trim());
+
+            tb.makePayment(amount);
+
+        } else if (choice == 2) {
+
+            String walletNumber = sc.nextLine().trim();
+            double amount = Double.parseDouble(sc.nextLine().trim());
+
+            tb.makePayment(walletNumber, amount);
+
+        } else if (choice == 3) {
+
+            String name = sc.nextLine().trim();
+            double amount = Double.parseDouble(sc.nextLine().trim());
+            String creditCard = sc.nextLine().trim();
+            String ccv = sc.nextLine().trim();
+
+            tb.makePayment(creditCard, ccv, name, amount);
+
+        } else {
+
+            System.out.println("Invalid choice");
+        }
+
+        sc.close();
+    }
+}
