@@ -1,0 +1,19 @@
+public class main {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 2, 1};
+        boolean palindrome = true;
+
+        for(int i = 0; i < numbers.length / 2; i++) {
+            if(numbers[i]!= numbers[numbers.length - 1 - i]) {
+                palindrome = false;
+                break;
+            }
+        }
+
+        if(palindrome) {
+            System.out.println("Array is palindrome");
+        } else {
+            System.out.println("Array is not palindrome");
+        }
+    }
+}
