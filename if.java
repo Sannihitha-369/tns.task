@@ -1,7 +1,0 @@
-public class Main {
-	public static void main(String[] args) {
-		int eligibility=60;
-		if(eligibility<=60)
-		System.out.println("eligible");						
-	}
-}
