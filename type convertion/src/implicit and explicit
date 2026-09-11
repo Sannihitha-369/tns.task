@@ -1,0 +1,23 @@
+public class TypeDemo {
+
+    public void implicittype() {
+        int x = 20;
+        long l = x;
+
+        System.out.println("Implicit type conversion: " + l);
+    }
+
+    public void explicittype() {
+        double a = 234.56;
+        int b = (int) a;
+
+        System.out.println("Explicit type conversion: " + b);
+    }
+
+    public static void main(String[] args) {
+        TypeDemo obj = new TypeDemo();
+
+        obj.implicittype();
+        obj.explicittype();
+    }
+}
