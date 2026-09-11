@@ -1,0 +1,30 @@
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter word: ");
+        String word = sc.next();
+
+        System.out.print("Enter age: ");
+        int age = sc.nextInt();
+
+        System.out.print("Enter salary: ");
+        double salary = sc.nextDouble();
+
+        System.out.print("Enter percentage: ");
+        float percentage = sc.nextFloat();
+
+        System.out.println("\nName: " + name);
+        System.out.println("Word: " + word);
+        System.out.println("Age: " + age);
+        System.out.println("Salary: " + salary);
+        System.out.println("Percentage: " + percentage);
+    }
+}
