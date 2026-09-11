@@ -1,0 +1,16 @@
+public class Main {
+    public static void main(String[] args) {
+
+        String s = "Hello Java";
+
+        System.out.println(s.length());
+        System.out.println(s.toUpperCase());
+        System.out.println(s.toLowerCase());
+        System.out.println(s.charAt(1));
+        System.out.println(s.contains("Java"));
+        System.out.println(s.startsWith("Hello"));
+        System.out.println(s.endsWith("Java"));
+        System.out.println(s.replace("Java", "World"));
+        System.out.println(s.substring(0, 5));
+    }
+}
